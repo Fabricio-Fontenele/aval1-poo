@@ -1,0 +1,54 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# React Native
+android/
+ios/
+*.keystore
+*.xcworkspace
+*.xcodeproj
+*.xcuserstate
+
+# Editor / Sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+
+# Cache
+.cache/
+.expo/
+.expo-shared/
+tmp/
+temp/
+__pycache__/
+
+# Figma / Design (se aplicável)
+*.fig
+*.sketch
+*.psd
+*.xd
+
+lib/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.env
+.venv
+venv/
