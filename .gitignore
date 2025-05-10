@@ -1,54 +1,30 @@
-# Node.js
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-dist/
-build/
-
-# React Native
-android/
-ios/
-*.keystore
-*.xcworkspace
-*.xcodeproj
-*.xcuserstate
-
-# Editor / Sistema
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
 *.swp
 
-# Ambiente
-.env
-.env.local
-.env.*.local
-
-# Logs
+pids
 logs
-*.log
+results
+tmp
 
-# Cache
-.cache/
-.expo/
-.expo-shared/
-tmp/
-temp/
-__pycache__/
+coverage/
 
-# Figma / Design (se aplicável)
-*.fig
-*.sketch
-*.psd
-*.xd
-
-lib/
-*.pyc
-__pycache__/
-*.pyo
-*.pyd
 .env
-.venv
-venv/
+
+node_modules
+bower_components
+
+.idea/
+*.iml
+
+.DS_Store
+Thumbs.db
+
+dist/
+build/
