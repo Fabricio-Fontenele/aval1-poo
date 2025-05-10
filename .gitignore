@@ -13,17 +13,27 @@ logs
 results
 tmp
 
-coverage/
+# Test coverage reports
+coverage
 
+# API keys and secrets
 .env
 
+# Dependency directory
 node_modules
 bower_components
 
-.idea/
+# Editors
+.idea
 *.iml
 
+# OS metadata
 .DS_Store
 Thumbs.db
-dist/
-build/z
+
+# Ignore built ts files
+dist
+build
+
+# ignore yarn.lock
+yarn.lock
