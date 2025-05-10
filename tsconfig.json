@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    
+    "paths": {
+      "src/*": ["src/*"]
+    },
+    
+    "outDir": "./build",
+    "sourceMap": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitOverride": false
+  },
+}
