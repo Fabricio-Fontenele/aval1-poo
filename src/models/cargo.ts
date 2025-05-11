@@ -9,5 +9,3 @@ export class Cargo {
     this.isShielded = isShielded;
   }
 }
-
-export { CargoType };

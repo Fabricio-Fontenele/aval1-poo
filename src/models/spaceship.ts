@@ -1,18 +1,16 @@
 
-import { Planet } from "./planet";
-import { Cargo } from "./cargo";
 import { shieldType, ShipTypes } from "src/types/types";
 
 export abstract class SpaceShips {
   public readonly typeShip: ShipTypes;
-  public readonly shield: shieldType[];
+  public readonly shield: shieldType;
   public readonly fuel: number;
   public readonly capacity: number;
   public readonly speed: number;
 
   constructor(
     typeShip: ShipTypes,
-    shield: shieldType[],
+    shield: shieldType,
     fuel: number,
     capacity: number,
     speed: number
@@ -22,15 +20,5 @@ export abstract class SpaceShips {
     this.fuel = fuel;
     this.capacity = capacity;
     this.speed = speed;
-  }
-
-  canTravelTo(planet: Planet, cargo: Cargo): boolean {
-    //** Se o planeta recebe a carga == True, se a atmosfera for compatível com as condiçoes da nave == True
-    // Se não == FALSE*/
-    if (planet.acceptedCargo.includes(cargo.cargoType)) {
-      return true;
-    } else {
-      return false;
-    }
   }
 }
