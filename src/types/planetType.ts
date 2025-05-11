@@ -1,5 +1,5 @@
 export enum PlanetType {
-    GasGiant,
-    IcePlanet,
-    RockyGiant,
+  GasGiant,
+  IcePlanet,
+  RockyGiant,
 }

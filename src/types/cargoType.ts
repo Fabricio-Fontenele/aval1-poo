@@ -1,8 +1,7 @@
-
 export enum CargoType {
-    ShieldedCapsule,
-    BioSample,
-    OxygenTank,
-    SupplyBox,
-    CommunicationModule,
+  ShieldedCapsule,
+  BioSample,
+  OxygenTank,
+  SupplyBox,
+  CommunicationModule,
 }

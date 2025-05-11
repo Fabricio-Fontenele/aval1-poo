@@ -1,5 +1,5 @@
 export enum ShipTypes {
-    Scoutship,
-    ThermalShieldShip,
-    HeavyCargoShip
+  Scoutship,
+  ThermalShieldShip,
+  HeavyCargoShip,
 }
