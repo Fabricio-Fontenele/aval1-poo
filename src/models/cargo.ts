@@ -1,4 +1,4 @@
-import { CargoType } from "src/types/cargoType";
+import { CargoType } from "src/types/types";
 
 export class Cargo {
   public readonly cargoType: CargoType;

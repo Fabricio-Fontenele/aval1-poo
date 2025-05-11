@@ -1,5 +1,5 @@
-import { CargoType } from "src/types/cargoType";
-import { PlanetType } from "src/types/planetType";
+
+import { CargoType, PlanetType } from "src/types/types";
 
 export abstract class Planet {
   name: string;

@@ -1,7 +1,7 @@
-import { ShipTypes } from "src/types/ShipType";
+
 import { Planet } from "./planet";
 import { Cargo } from "./cargo";
-import { shieldType } from "src/types/shieldType";
+import { shieldType, ShipTypes } from "src/types/types";
 
 export abstract class SpaceShips {
   public readonly typeShip: ShipTypes;
