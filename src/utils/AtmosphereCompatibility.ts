@@ -1,6 +1,4 @@
-import { shieldType } from "src/types/shieldType";
-import { TypeAtmosphere } from "src/types/typeAtmosphere";
-
+import { shieldType, TypeAtmosphere } from "src/types/types";
 
 export const AtmosphereCompatibility: Record<TypeAtmosphere, shieldType[]> = {
   [TypeAtmosphere.Sporophic]: [shieldType.BioFilterShield],
