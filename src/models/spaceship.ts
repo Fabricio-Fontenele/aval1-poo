@@ -1,7 +1,7 @@
 import { shieldType, ShipTypes } from "src/types/types";
 import { Cargo } from "./cargo";
 
-export abstract class SpaceShips {
+export class SpaceShips {
   public readonly typeShip: ShipTypes
   public readonly shield: shieldType
   public readonly fuel: number

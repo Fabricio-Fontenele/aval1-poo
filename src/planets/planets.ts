@@ -2,6 +2,7 @@ import { Planet } from "src/models/planet";
 import { CargoType, planetName, TypeAtmosphere } from "src/types/types";
 import { randNumber, randomSelection } from "src/utils/randons";
 
+
 export class Nebularic extends Planet {
     static readonly nebularicAtmosphere = randomSelection(TypeAtmosphere, 1)
     static readonly distanceForEarth = randNumber(1000, 8000)

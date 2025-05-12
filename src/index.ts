@@ -1,9 +1,6 @@
 
 // FORMA DE USO ESPERADO!!!!!!!!!!!
 
-import { MissionConstrol } from "./mission/missionControl";
-import { randNumber } from "./utils/randons";
+import { Mission } from "./mission/mission";
 
-const randomNum = randNumber(1000, 8000)
-
-console.log(randomNum)
+const mission1 = new Mission

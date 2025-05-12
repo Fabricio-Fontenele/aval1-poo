@@ -3,10 +3,10 @@ import { SpaceShips } from "./spaceship";
 import { AtmosphereCompatibility } from "src/utils/AtmosphereCompatibility";
 
 export class Planet {
-  name: string;
-  atmosphere: string
-  distanceToEarth: number;
-  acceptedCargo: CargoType[];
+  public readonly name: string;
+  public readonly atmosphere: string
+  public readonly distanceToEarth: number;
+  public readonly acceptedCargo: CargoType[];
 
   constructor(
     name: string,
