@@ -1,11 +1,10 @@
-import { CargoType } from "src/types/types";
+import { CargoType } from "../types/types";
 
-export class Cargo {
-  public readonly cargoType: CargoType;
-  public readonly isShielded: boolean;
-
-  constructor(cargoType: CargoType, isShielded: boolean) {
-    this.cargoType = cargoType;
-    this.isShielded = isShielded;
-  }
+export abstract class Cargo {
+  constructor(
+    public weight: number,
+    public cargoType: CargoType
+  ) {}
 }
+export { CargoType };
+

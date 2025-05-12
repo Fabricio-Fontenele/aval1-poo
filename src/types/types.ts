@@ -13,27 +13,29 @@ export enum CargoType {
 }
 
 export enum shieldType {
-  "BioFilterShield",
-  "ThermalShield",
-  "RadiationShield",
-  "PhaseShield",
-  "CorrosionShield",
-  "CryoInsulationShield",
-  "MagneticDisruptor",
+  BioFilterShield,
+  ThermalShield,
+  RadiationShield,
+  PhaseShield,
+  CorrosionShield,
+  CryoInsulationShield,
+  MagneticDisruptor,
 }
 
 export enum ShipTypes {
-  Scoutship,
-  ThermalShieldShip,
-  HeavyCargoShip,
+  PixieRunner,
+  stellarCreate,
+  StellarCrate,
+  TitanCarrier,
+  GoliathHauler
 }
 
 export enum TypeAtmosphere {
-  'Sporophic',
-  'Mercurial',
-  'Etheralia',
-  'Obscuria',
-  'Chernofrost',
-  'Vulcarine',
-  'Sulfarine'
+  Sporophic,
+  Mercurial,
+  Etheralia,
+  Obscuria,
+  Chernofrost,
+  Vulcarine,
+  Sulfarine,
 }
