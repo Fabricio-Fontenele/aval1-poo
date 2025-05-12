@@ -6,5 +6,3 @@ export abstract class Cargo {
     public cargoType: CargoType
   ) {}
 }
-export { CargoType };
-

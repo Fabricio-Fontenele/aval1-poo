@@ -2,11 +2,11 @@ import { shieldType, ShipTypes } from "src/types/types";
 import { Cargo } from "./cargo";
 
 export abstract class SpaceShips {
-  public readonly typeShip: ShipTypes;
-  public readonly shield: shieldType;
-  public readonly fuel: number;
-  public readonly maxCapacity: number;
-  public readonly speed: number;
+  public readonly typeShip: ShipTypes
+  public readonly shield: shieldType
+  public readonly fuel: number
+  public readonly maxCapacity: number
+  public readonly speed: number
 
   constructor(
     typeShip: ShipTypes,
