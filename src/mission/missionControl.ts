@@ -6,19 +6,25 @@ type Mission = {
   frota: SpaceShips[];
 };
 
-class MissionConstrol {
-  mission: Mission[];
-  shipDisponiboliy: SpaceShips[];
+export class MissionConstrol {
+  private mission: Mission[] = []
+  private shipDisponiboliy: SpaceShips[] = []
 
-  constructor(mission: Mission[], shipDisponibolity: SpaceShips[]) {
-    this.mission = mission;
-    this.shipDisponiboliy = shipDisponibolity;
-  }
+  constructor() {}
 
-  assignedShip(): void {
+  
+  private assignedShip(): void {
     for (let i; (i = 0); i < this.shipDisponiboliy.length) {
       let index = Math.floor(Math.random() * SpaceShips.length);
       const naveEscolhida = this.shipDisponiboliy[index];
     }
   }
+  
+  //*REPONSÁVEL POR INICIALIZAR A "MISSÃO", 
+  // CRIANDO AS INTÂNCIAS DAS CLASSES DE FORMA RANDÔMICA/
+  startMisssion(): void {}
+
+  
+  //*RESPONSÁVEL POR INFORMAR OS 'LOGS' DA MISSÃO/
+  showReport(): void {}
 }

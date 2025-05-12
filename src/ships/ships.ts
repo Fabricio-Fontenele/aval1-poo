@@ -3,7 +3,7 @@ import { shieldType, ShipTypes } from "src/types/types";
 
 export class GoliathHauler extends SpaceShips {
   static readonly Ship = ShipTypes.GoliathHauler;
-  static readonly fuel = 100000;
+  static readonly fuel = 6000;
   static readonly maxCapacity = 40000;
   static readonly speed = 900;
   constructor(shield: shieldType) {
@@ -19,7 +19,7 @@ export class GoliathHauler extends SpaceShips {
 
 export class NovaDrift extends SpaceShips {
   static readonly Ship = ShipTypes.stellarCreate;
-  static readonly fuel = 50000;
+  static readonly fuel = 4000;
   static readonly maxCapacity = 10000;
   static readonly speed = 1300;
   constructor(shield: shieldType) {
@@ -35,7 +35,7 @@ export class NovaDrift extends SpaceShips {
 
 export class PixieRunner extends SpaceShips {
   static readonly Ship = ShipTypes.PixieRunner;
-  static readonly fuel = 25000;
+  static readonly fuel = 2500;
   static readonly maxCapacity = 2000;
   static readonly speed = 1800;
   constructor(shield: shieldType) {
@@ -51,7 +51,7 @@ export class PixieRunner extends SpaceShips {
 
 export class stellarCreate extends SpaceShips {
   static readonly Ship = ShipTypes.stellarCreate;
-  static readonly fuel = 100000;
+  static readonly fuel = 6000;
   static readonly maxCapacity = 40000;
   static readonly speed = 900;
   constructor(shield: shieldType) {
@@ -67,7 +67,7 @@ export class stellarCreate extends SpaceShips {
 
 export class TitanCarrier extends SpaceShips {
   static readonly Ship = ShipTypes.TitanCarrier;
-  static readonly fuel = 200000;
+  static readonly fuel = 8000;
   static readonly maxCapacity = 120000;
   static readonly speed = 600;
   constructor(shield: shieldType) {

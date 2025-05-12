@@ -1,8 +1,20 @@
-export enum PlanetType {
-  GasGiant,
-  IcePlanet,
-  RockyGiant,
-}
+export const planetName: string[] = [
+  'Nebularic',
+  'Luminid',
+  'Florite',
+  'Aquahell',
+  'Roxil',
+]
+
+export const TypeAtmosphere: string[] = [
+  'Sporophic',
+  'Mercurial',
+  'Etheralia',
+  'Obscuria',
+  'Chernofrost',
+  'Vulcarine',
+  'Sulfarine',
+]
 
 export enum CargoType {
   ShieldedCapsule,
@@ -27,15 +39,6 @@ export enum ShipTypes {
   stellarCreate,
   StellarCrate,
   TitanCarrier,
-  GoliathHauler
+  GoliathHauler,
 }
 
-export enum TypeAtmosphere {
-  Sporophic,
-  Mercurial,
-  Etheralia,
-  Obscuria,
-  Chernofrost,
-  Vulcarine,
-  Sulfarine,
-}

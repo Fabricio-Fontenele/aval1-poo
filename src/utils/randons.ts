@@ -12,3 +12,8 @@ export function randomSelection<T>(array: T[], value: number): T[] {
 
   return selection;
 }
+
+export function randNumber(start: number, end: number): number {
+
+  return Math.floor(Math.random() * (end - start) + start)
+}
