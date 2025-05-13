@@ -6,14 +6,18 @@ type Mission = {
   frota: SpaceShips[];
 };
 
-export class MissionConstrol {
+export class MissionControl {
   private mission: Mission[] = [];
   private shipDisponiboliy: SpaceShips[] = [];
 
   constructor() {}
 
+  addShip(ship:SpaceShips) {
+    this.shipDisponiboliy.push(ship)
+  }
+
   private assignedShip(): void {
-    for (let i; (i = 0); i < this.shipDisponiboliy.length) {
+    for (let i = 0; i < this.shipDisponiboliy.length; i++) {
       let index = Math.floor(Math.random() * SpaceShips.length);
       const naveEscolhida = this.shipDisponiboliy[index];
     }
