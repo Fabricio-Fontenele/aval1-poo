@@ -2,24 +2,21 @@ import { ShieldType, ShipTypes } from "src/types/types";
 import { Cargo } from "./cargo";
 
 export class SpaceShips {
-  public readonly typeShip: ShipTypes;
-  public readonly shield: ShieldType;
-  public readonly fuel: number;
-  public readonly maxCapacity: number;
-  public readonly speed: number;
+  public readonly typeShip: string
+  public readonly shield: ShieldType
+  public readonly fuel: number
+  public readonly maxCapacity: number
 
   constructor(
-    typeShip: ShipTypes,
+    typeShip: string,
     shield: ShieldType,
     fuel: number,
-    maxCapacity: number,
-    speed: number
+    maxCapacity: number
   ) {
-    this.typeShip = typeShip;
-    this.shield = shield;
-    this.fuel = fuel;
-    this.maxCapacity = maxCapacity;
-    this.speed = speed;
+    this.typeShip = typeShip
+    this.shield = shield
+    this.fuel = fuel
+    this.maxCapacity = maxCapacity
   }
 
   canCarry(cargo: Cargo): boolean {

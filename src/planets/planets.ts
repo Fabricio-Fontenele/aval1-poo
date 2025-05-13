@@ -1,18 +1,18 @@
-import { Planet } from "src/models/planet";
-import { CargoType, planetName, TypeAtmosphere } from "src/types/types";
-import { random, randomChoice } from "src/utils/randons";
+import { Planet } from "src/models/planet"
+import { CargoType, planetName, TypeAtmosphere } from "src/types/types"
+import { random, randomChoice } from "src/utils/randons"
 
 export class Nebularic extends Planet {
-  static readonly randomAtmosphere = randomChoice(TypeAtmosphere);
-  static readonly distanceForEarth = random(8000);
+  static readonly randomAtmosphere = randomChoice(TypeAtmosphere)
+  static readonly distanceForEarth = random(8000)
   static readonly AcceptedCargo: CargoType[] = [
     CargoType.ShieldedCapsule,
     CargoType.OxygenTank,
-  ];
+  ]
 
   constructor() {
     super(
-      planetName.Nebularic,
+      planetName[3],
       Nebularic.randomAtmosphere,
       Nebularic.distanceForEarth,
       Nebularic.AcceptedCargo
@@ -21,13 +21,13 @@ export class Nebularic extends Planet {
 }
 
 export class Luminid extends Planet {
-  static readonly randomAtmosphere = randomChoice(TypeAtmosphere, 1);
+  static readonly randomAtmosphere = randomChoice(TypeAtmosphere);
   static readonly distanceForEarth = random(8000);
   static readonly AcceptedCargo: CargoType[] = [CargoType.CommunicationModule];
 
   constructor() {
     super(
-      planetName.Luminid,
+      planetName[1],
       Luminid.randomAtmosphere,
       Luminid.distanceForEarth,
       Luminid.AcceptedCargo
@@ -46,7 +46,7 @@ export class Florite extends Planet {
 
   constructor() {
     super(
-      planetName.Florite,
+      planetName[2],
       Florite.randomAtmosphere,
       Florite.distanceForEarth,
       Florite.AcceptedCargo
@@ -64,7 +64,7 @@ export class Aquahell extends Planet {
 
   constructor() {
     super(
-      planetName.Aquahell,
+      planetName[3],
       Aquahell.randomAtmosphere,
       Aquahell.distanceForEarth,
       Aquahell.AcceptedCargo
@@ -83,7 +83,7 @@ export class Roxil extends Planet {
 
   constructor() {
     super(
-      planetName.Roxil,
+      planetName[4],
       Roxil.randomAtmosphere,
       Roxil.distanceForEarth,
       Roxil.AcceptedCargo

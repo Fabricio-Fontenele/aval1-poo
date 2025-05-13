@@ -2,8 +2,8 @@ import { Cargo } from "src/models/cargo";
 import { CargoType } from "src/types/types";
 
 export class BioSample extends Cargo {
-  static readonly cargoType = CargoType.BioSample;
-  static readonly bioSamploWeight = 15000;
+  static readonly cargoType = CargoType.BioSample
+  static readonly bioSamploWeight = 15000
 
   constructor() {
     super(BioSample.bioSamploWeight, BioSample.cargoType);

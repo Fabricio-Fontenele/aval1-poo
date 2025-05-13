@@ -4,79 +4,137 @@ import {
   OxygenTank,
   ShieldedCapsule,
   SupplyBox,
-} from "src/cargos/cargos";
-import { Cargo } from "src/models/cargo";
-import { Planet } from "src/models/planet";
-import { SpaceShips } from "src/models/spaceship";
-import {
-  Aquahell,
-  Florite,
-  Luminid,
-  Nebularic,
-  Roxil,
-} from "src/planets/planets";
+} from "src/cargos/cargos"
+import { Cargo } from "src/models/cargo"
+import { Planet } from "src/models/planet"
+import { SpaceShips } from "src/models/spaceship"
+import { Aquahell, Florite, Luminid, Nebularic, Roxil } from "src/planets/planets"
 import {
   GoliathHauler,
   NovaDrift,
   PixieRunner,
   StellarCreate,
   TitanCarrier,
-} from "src/ships/ships";
-import { AtmosphereCompatibility } from "src/utils/AtmosphereCompatibility";
-import { randomChoice } from "src/utils/randons";
+} from "src/ships/ships"
+import { ShieldType } from "src/types/types"
+import { AtmosphereCompatibility } from "src/utils/AtmosphereCompatibility"
+import { randomChoice } from "src/utils/randons"
 
 export class Mission {
-  private spaceships: SpaceShips[] = [];
-  private planets: Planet[] = [];
-  private cargos: Cargo[] = [];
+  private planet: Planet
+  private spaceship: SpaceShips
+  private cargo: Cargo
+  private missionName: string
+  private fuelRemaining: number = 0
+  private failureReasons: string[] = []
 
-  constructor() {}
+  private cargoDelivered: boolean = false
+  private missionSuccess: boolean = false
+  private shieldCompatible: boolean = false
 
-  // MÉTODO RESPONSÁVEL POR INICIAR A MISSÃO
-  start(): void {
-    const planets = [
+  constructor(name: string) {
+    this.missionName = name
+    this.planet = this.getRandomPlanet()
+    const shield = this.getShieldCompatibleWithAtmosphere(this.planet.atmosphere)
+    this.spaceship = this.getRandomShip(shield)
+    this.cargo = this.getRandomCompatibleCargo()
+
+    this.evaluateMission()
+  }
+
+  private getRandomPlanet(): Planet {
+    const allPlanets = [
       new Roxil(),
       new Florite(),
       new Luminid(),
       new Aquahell(),
       new Nebularic(),
-    ];
-    const selectedPlanet = randomChoice(planets);
+    ]
+    
+    return randomChoice(allPlanets)
+  }
 
-    const atmosphere = selectedPlanet.atmosphere;
-    const compatibleShields = AtmosphereCompatibility[atmosphere];
-    const selectedShield = randomChoice(compatibleShields);
+  private getShieldCompatibleWithAtmosphere(atmosphere: string): ShieldType {
+    const possibleShields = AtmosphereCompatibility[atmosphere]
+    
+    return randomChoice(possibleShields)
+  }
 
-    const shipOptions = [
-      new GoliathHauler(selectedShield),
-      new NovaDrift(selectedShield),
-      new PixieRunner(selectedShield),
-      new StellarCreate(selectedShield),
-      new TitanCarrier(selectedShield),
-    ];
+  private getRandomShip(shield: ShieldType): SpaceShips {
+    const ships = [
+      new GoliathHauler(shield),
+      new NovaDrift(shield),
+      new PixieRunner(shield),
+      new StellarCreate(shield),
+      new TitanCarrier(shield),
+    ]
+    
+    return randomChoice(ships)
+  }
 
-    const selectedShip = randomChoice(shipOptions);
-
+  private getRandomCompatibleCargo(): Cargo {
     const allCargos = [
       new BioSample(),
+      new CommunicationModule(),
       new OxygenTank(),
       new ShieldedCapsule(),
       new SupplyBox(),
-      new CommunicationModule(),
-    ];
+    ]
 
-    const compatibleCargo = allCargos.filter(
-      (cargo) =>
-        selectedPlanet.acceptedCargo.includes(cargo.cargoType) &&
-        selectedShip.canCarry(cargo)
-    );
+    const valid = allCargos.filter((cargo) =>
+      this.planet.acceptedCargo.includes(cargo.cargoName)
+    )
 
-    if (compatibleCargo.length === 0) {
-      console.log("❌ Nenhuma carga compatível com o planeta e nave.");
-      return;
-    }
+    return valid.length > 0 ? randomChoice(valid) : randomChoice(allCargos)
+  }
+
+  
+  private evaluateMission(): void {
+    this.shieldCompatible = this.planet.isCompatible(this.spaceship)
+    const canCarry = this.spaceship.canCarry(this.cargo)
+    const canReach = this.spaceship.fuel >= this.planet.distanceToEarth
+
+    if (!this.shieldCompatible)
+      this.failureReasons.push("Escudo incompatível com a atmosfera do planeta.");
+    if (!canCarry)
+      this.failureReasons.push("Carga excede a capacidade máxima da nave.");
+    if (!canReach)
+      this.failureReasons.push("Combustível insuficiente para alcançar o destino.");
+
+    this.cargoDelivered = this.shieldCompatible && canCarry && canReach
+    this.missionSuccess = this.cargoDelivered;
+    this.fuelRemaining = Math.max(0, this.spaceship.fuel - this.planet.distanceToEarth)
   }
 
   // MÉTODO RESPONSÁVEL POR IMPRIMIR TODAS AS INFORMAÇÕES DA MISSÃO
-  showReport(): void {}
+    public showReport(): void {
+    console.log(`
+             RELATÓRIO OFICIAL DE MISSÃO - ${this.missionName}
+================================================================
+NAVE RESPONSÁVEL - ${this.spaceship.typeShip}
+CAPACIDADE MÁXIMA - ${this.spaceship.maxCapacity}
+================================================================
+DESTINO DA ENTREGA
+----------------------------------------------------------------
+Planeta: ${this.planet.name}
+Atmosfera: ${this.planet.atmosphere}
+Distância: ${this.planet.distanceToEarth} km
+================================================================
+DETALHES DA ENTREGA
+----------------------------------------------------------------
+Missão: ${this.missionName}
+Carga: ${this.cargo.cargoName}
+Peso Total: ${this.cargo.weight} kg
+Entrega Realizada: ${this.cargoDelivered ? "SIM" : "NÃO"}
+================================================================
+STATUS DA MISSÃO
+----------------------------------------------------------------
+STATUS: ${this.missionSuccess ? "BEM-SUCEDIDA" : "FALHOU"}
+${this.missionSuccess ? `Combustível Restante: ${this.fuelRemaining} L(${Math.floor((this.fuelRemaining / this.spaceship.fuel) * 100)}%)`: ""}
+${!this.missionSuccess ? `Motivo${this.failureReasons.length > 1 ? 's' : ''}:\n- ${this.failureReasons.join('\n- ')}` : ""}
+${this.missionSuccess ? `Entrega de ${this.cargo.cargoName} ao planeta ${this.planet.name} realizada com sucesso` : ""}
+================================================================
+            FIM DO RELATÓRIO - TRANSMISSÃO ENCERRADA
+================================================================`)
+  }
 }

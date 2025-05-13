@@ -1,5 +1,5 @@
-import { CargoType } from "../types/types";
+import { CargoType } from "../types/types"
 
 export abstract class Cargo {
-  constructor(public readonly weight: number, public readonly cargoType: CargoType) {}
+  constructor(public readonly weight: number, public readonly cargoName: CargoType) {}
 }

@@ -1,26 +1,26 @@
 export enum planetName {
-  Nebularic,
-  Luminid,
-  Florite,
-  Aquahell,
-  Roxil,
+  'Nebularic',
+  'Luminid',
+  'Florite',
+  'Aquahell',
+  'Roxil',
 }
 
-export enum TypeAtmosphere {
-  Corrosive = 'corrosive',
-  Toxic = 'toxic',
-  Explosive = 'explosive',
-  Radioactive = 'radioactive',
-  Thin = 'thin',
-  Dense = 'dense',
-}
+export const TypeAtmosphere = [
+  'corrosive',
+  'toxic',
+  'explosive',
+  'radioactive',
+  'thin',
+  'dense',
+]
 
 export enum CargoType {
-  ShieldedCapsule,
-  BioSample,
-  OxygenTank,
-  SupplyBox,
-  CommunicationModule,
+  ShieldedCapsule = "Capsula de armadura",
+  BioSample = "Amostra biológica",
+  OxygenTank = "Tanque de Oxigênio",
+  SupplyBox = "Caixa de suprimentos",
+  CommunicationModule = "Módulo de comunicação",
 }
 
 export enum ShieldType {
@@ -34,9 +34,10 @@ export enum ShieldType {
 }
 
 export enum ShipTypes {
-  PixieRunner,
-  stellarCreate,
-  StellarCrate,
-  TitanCarrier,
-  GoliathHauler,
+  'PixieRunner',
+  'stellarCreate',
+  'StellarCrate',
+  'TitanCarrier',
+  'GoliathHauler',
+  'NovaDrift'
 }
