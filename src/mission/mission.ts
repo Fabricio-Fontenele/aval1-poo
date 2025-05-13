@@ -104,11 +104,15 @@ export class Mission {
     this.cargoDelivered = this.shieldCompatible && canCarry && canReach
     this.missionSuccess = this.cargoDelivered;
     this.fuelRemaining = Math.max(0, this.spaceship.fuel - this.planet.distanceToEarth)
+
   }
 
   // MÉTODO RESPONSÁVEL POR IMPRIMIR TODAS AS INFORMAÇÕES DA MISSÃO
     public showReport(): void {
-    console.log(`
+    
+    const failedDueToWeight = this.failureReasons.includes("Carga excede a capacidade máxima da nave.");
+    
+      console.log(`
              RELATÓRIO OFICIAL DE MISSÃO - ${this.missionName}
 ================================================================
 NAVE RESPONSÁVEL - ${this.spaceship.typeShip}
@@ -130,10 +134,21 @@ Entrega Realizada: ${this.cargoDelivered ? "SIM" : "NÃO"}
 STATUS DA MISSÃO
 ----------------------------------------------------------------
 STATUS: ${this.missionSuccess ? "BEM-SUCEDIDA" : "FALHOU"}
-${this.missionSuccess ? `Combustível Restante: ${this.fuelRemaining} L(${Math.floor((this.fuelRemaining / this.spaceship.fuel) * 100)}%)`: ""}
-${!this.missionSuccess ? `Motivo${this.failureReasons.length > 1 ? 's' : ''}:\n- ${this.failureReasons.join('\n- ')}` : ""}
-${this.missionSuccess ? `Entrega de ${this.cargo.cargoName} ao planeta ${this.planet.name} realizada com sucesso` : ""}
-================================================================
+${this.missionSuccess 
+  ? `Combustível Restante: ${this.fuelRemaining} L (${Math.floor((this.fuelRemaining / this.spaceship.fuel) * 100)}%)`
+  : (!failedDueToWeight 
+      ? `Combustível Restante: ${this.fuelRemaining} L (${Math.floor((this.fuelRemaining / this.spaceship.fuel) * 100)}%)`
+      : "")
+}
+${!this.missionSuccess 
+  ? `Motivo${this.failureReasons.length > 1 ? 's' : ''}:\n- ${this.failureReasons.join('\n- ')}`
+  : ""
+}
+${this.missionSuccess 
+  ? `Entrega de ${this.cargo.cargoName} ao planeta ${this.planet.name} realizada com sucesso`
+  : ""
+}
+
             FIM DO RELATÓRIO - TRANSMISSÃO ENCERRADA
 ================================================================`)
   }

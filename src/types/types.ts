@@ -26,9 +26,7 @@ export enum CargoType {
 export enum ShieldType {
   chemicalResistant,
   biohazardSealed,
-  sparkProof,
   radiationShielded,
-  vacuumInsulated,
   reinforcedHull,
   corrosionResistant
 }
