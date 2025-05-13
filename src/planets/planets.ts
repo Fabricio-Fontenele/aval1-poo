@@ -1,9 +1,10 @@
 import { Planet } from "src/models/planet";
 import { CargoType, planetName, TypeAtmosphere } from "src/types/types";
-import { randNumber } from "src/utils/randons";
+import { random, randomChoice } from "src/utils/randons";
 
 export class Nebularic extends Planet {
-  static readonly distanceForEarth = randNumber(1000, 8000);
+  static readonly randomAtmosphere = randomChoice(TypeAtmosphere);
+  static readonly distanceForEarth = random(8000);
   static readonly AcceptedCargo: CargoType[] = [
     CargoType.ShieldedCapsule,
     CargoType.OxygenTank,
@@ -12,7 +13,7 @@ export class Nebularic extends Planet {
   constructor() {
     super(
       planetName.Nebularic,
-      TypeAtmosphere.Obscuria,
+      Nebularic.randomAtmosphere,
       Nebularic.distanceForEarth,
       Nebularic.AcceptedCargo
     );
@@ -20,13 +21,14 @@ export class Nebularic extends Planet {
 }
 
 export class Luminid extends Planet {
-  static readonly distanceForEarth = randNumber(1000, 8000);
+  static readonly randomAtmosphere = randomChoice(TypeAtmosphere, 1);
+  static readonly distanceForEarth = random(8000);
   static readonly AcceptedCargo: CargoType[] = [CargoType.CommunicationModule];
 
   constructor() {
     super(
       planetName.Luminid,
-      TypeAtmosphere.Sporophic,
+      Luminid.randomAtmosphere,
       Luminid.distanceForEarth,
       Luminid.AcceptedCargo
     );
@@ -34,7 +36,8 @@ export class Luminid extends Planet {
 }
 
 export class Florite extends Planet {
-  static readonly distanceForEarth = randNumber(1000, 8000);
+  static readonly randomAtmosphere = randomChoice(TypeAtmosphere);
+  static readonly distanceForEarth = random(8000);
   static readonly AcceptedCargo: CargoType[] = [
     CargoType.SupplyBox,
     CargoType.OxygenTank,
@@ -44,7 +47,7 @@ export class Florite extends Planet {
   constructor() {
     super(
       planetName.Florite,
-      TypeAtmosphere.Sulfarine,
+      Florite.randomAtmosphere,
       Florite.distanceForEarth,
       Florite.AcceptedCargo
     );
@@ -52,7 +55,8 @@ export class Florite extends Planet {
 }
 
 export class Aquahell extends Planet {
-  static readonly distanceForEarth = randNumber(1000, 8000);
+  static readonly randomAtmosphere = randomChoice(TypeAtmosphere);
+  static readonly distanceForEarth = random(8000);
   static readonly AcceptedCargo: CargoType[] = [
     CargoType.OxygenTank,
     CargoType.ShieldedCapsule,
@@ -61,7 +65,7 @@ export class Aquahell extends Planet {
   constructor() {
     super(
       planetName.Aquahell,
-      TypeAtmosphere.Chernofrost,
+      Aquahell.randomAtmosphere,
       Aquahell.distanceForEarth,
       Aquahell.AcceptedCargo
     );
@@ -69,7 +73,8 @@ export class Aquahell extends Planet {
 }
 
 export class Roxil extends Planet {
-  static readonly distanceForEarth = randNumber(1000, 8000);
+  static readonly randomAtmosphere = randomChoice(TypeAtmosphere);
+  static readonly distanceForEarth = random(8000);
   static readonly AcceptedCargo: CargoType[] = [
     CargoType.ShieldedCapsule,
     CargoType.BioSample,
@@ -79,7 +84,7 @@ export class Roxil extends Planet {
   constructor() {
     super(
       planetName.Roxil,
-      TypeAtmosphere.Vulcarine,
+      Roxil.randomAtmosphere,
       Roxil.distanceForEarth,
       Roxil.AcceptedCargo
     );

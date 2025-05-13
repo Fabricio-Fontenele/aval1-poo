@@ -1,12 +1,12 @@
 import { Cargo } from "src/models/cargo";
 import { CargoType } from "src/types/types";
 
-export class bioSample extends Cargo {
+export class BioSample extends Cargo {
   static readonly cargoType = CargoType.BioSample;
   static readonly bioSamploWeight = 15000;
 
   constructor() {
-    super(bioSample.bioSamploWeight, bioSample.cargoType);
+    super(BioSample.bioSamploWeight, BioSample.cargoType);
   }
 }
 
@@ -18,12 +18,12 @@ export class OxygenTank extends Cargo {
   }
 }
 
-export class shieldedCapsule extends Cargo {
+export class ShieldedCapsule extends Cargo {
   static readonly cargoType = CargoType.ShieldedCapsule;
-  static readonly shieldedCapsuleWight = 45000;
+  static readonly shieldedCapsuleWeight = 45000;
 
   constructor() {
-    super(shieldedCapsule.shieldedCapsuleWight, shieldedCapsule.cargoType);
+    super(ShieldedCapsule.shieldedCapsuleWeight, ShieldedCapsule.cargoType);
   }
 }
 
@@ -37,7 +37,7 @@ export class SupplyBox extends Cargo {
 }
 
 export class CommunicationModule extends Cargo {
-  static readonly cargoType = CargoType.SupplyBox;
+  static readonly cargoType = CargoType.CommunicationModule;
   static readonly communicModuleWeight = 40000;
 
   constructor() {

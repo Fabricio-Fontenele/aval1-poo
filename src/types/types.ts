@@ -7,13 +7,12 @@ export enum planetName {
 }
 
 export enum TypeAtmosphere {
-  Sporophic,
-  Mercurial,
-  Etheralia,
-  Obscuria,
-  Chernofrost,
-  Vulcarine,
-  Sulfarine,
+  Corrosive = 'corrosive',
+  Toxic = 'toxic',
+  Explosive = 'explosive',
+  Radioactive = 'radioactive',
+  Thin = 'thin',
+  Dense = 'dense',
 }
 
 export enum CargoType {
@@ -24,14 +23,14 @@ export enum CargoType {
   CommunicationModule,
 }
 
-export enum shieldType {
-  BioFilterShield,
-  ThermalShield,
-  RadiationShield,
-  PhaseShield,
-  CorrosionShield,
-  CryoInsulationShield,
-  MagneticDisruptor,
+export enum ShieldType {
+  chemicalResistant,
+  biohazardSealed,
+  sparkProof,
+  radiationShielded,
+  vacuumInsulated,
+  reinforcedHull,
+  corrosionResistant
 }
 
 export enum ShipTypes {

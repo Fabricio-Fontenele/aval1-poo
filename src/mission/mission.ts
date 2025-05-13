@@ -1,3 +1,11 @@
+import {
+  BioSample,
+  CommunicationModule,
+  OxygenTank,
+  ShieldedCapsule,
+  SupplyBox,
+} from "src/cargos/cargos";
+import { Cargo } from "src/models/cargo";
 import { Planet } from "src/models/planet";
 import { SpaceShips } from "src/models/spaceship";
 import {
@@ -11,66 +19,63 @@ import {
   GoliathHauler,
   NovaDrift,
   PixieRunner,
-  stellarCreate,
+  StellarCreate,
   TitanCarrier,
 } from "src/ships/ships";
-import { shieldType } from "src/types/types";
+import { AtmosphereCompatibility } from "src/utils/AtmosphereCompatibility";
+import { randomChoice } from "src/utils/randons";
 
 export class Mission {
-  private ship: SpaceShips | null = null;
-  private planet: Planet | null = null;
+  private spaceships: SpaceShips[] = [];
+  private planets: Planet[] = [];
+  private cargos: Cargo[] = [];
 
-  constructor(
-    private planets: (new () => Planet)[] = [
-      Nebularic,
-      Luminid,
-      Florite,
-      Aquahell,
-      Roxil,
-    ],
-
-    private shipDisponibolity: (new (shield: shieldType) => SpaceShips)[] = [
-      GoliathHauler,
-      NovaDrift,
-      PixieRunner,
-      stellarCreate,
-      TitanCarrier,
-    ]
-  ) {}
-
-  // MÉTODOS RESPONSÁVEIS POR FAZER AS ESCOLHAS ALEATÓROIAS DOS PLANETAS E DAS NAVES
-
-  public assignedShip(): SpaceShips {
-    const index = Math.floor(Math.random() * this.shipDisponibolity.length);
-    const chosenShip = this.shipDisponibolity[index];
-
-    const availableShields: shieldType[] = [
-      shieldType.BioFilterShield,
-      shieldType.ThermalShield,
-      shieldType.RadiationShield,
-      shieldType.PhaseShield,
-      shieldType.CorrosionShield,
-      shieldType.CryoInsulationShield,
-      shieldType.MagneticDisruptor,
-    ];
-
-    const randomShield =
-      availableShields[Math.floor(Math.random() * availableShields.length)];
-
-    return new chosenShip(randomShield);
-  }
-
-  public assignedPlanet(): Planet {
-    const index = Math.floor(Math.random() * this.planets.length);
-    const chosenPlanet = this.planets[index];
-
-    return new chosenPlanet();
-  }
-
-  /////////////////////////////////////////////////////////////////////////////////////
+  constructor() {}
 
   // MÉTODO RESPONSÁVEL POR INICIAR A MISSÃO
-  start(): void {}
+  start(): void {
+    const planets = [
+      new Roxil(),
+      new Florite(),
+      new Luminid(),
+      new Aquahell(),
+      new Nebularic(),
+    ];
+    const selectedPlanet = randomChoice(planets);
+
+    const atmosphere = selectedPlanet.atmosphere;
+    const compatibleShields = AtmosphereCompatibility[atmosphere];
+    const selectedShield = randomChoice(compatibleShields);
+
+    const shipOptions = [
+      new GoliathHauler(selectedShield),
+      new NovaDrift(selectedShield),
+      new PixieRunner(selectedShield),
+      new StellarCreate(selectedShield),
+      new TitanCarrier(selectedShield),
+    ];
+
+    const selectedShip = randomChoice(shipOptions);
+
+    const allCargos = [
+      new BioSample(),
+      new OxygenTank(),
+      new ShieldedCapsule(),
+      new SupplyBox(),
+      new CommunicationModule(),
+    ];
+
+    const compatibleCargo = allCargos.filter(
+      (cargo) =>
+        selectedPlanet.acceptedCargo.includes(cargo.cargoType) &&
+        selectedShip.canCarry(cargo)
+    );
+
+    if (compatibleCargo.length === 0) {
+      console.log("❌ Nenhuma carga compatível com o planeta e nave.");
+      return;
+    }
+  }
 
   // MÉTODO RESPONSÁVEL POR IMPRIMIR TODAS AS INFORMAÇÕES DA MISSÃO
   showReport(): void {}

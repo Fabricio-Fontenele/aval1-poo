@@ -1,16 +1,16 @@
-import { shieldType, ShipTypes } from "src/types/types";
+import { ShieldType, ShipTypes } from "src/types/types";
 import { Cargo } from "./cargo";
 
 export class SpaceShips {
   public readonly typeShip: ShipTypes;
-  public readonly shield: shieldType;
+  public readonly shield: ShieldType;
   public readonly fuel: number;
   public readonly maxCapacity: number;
   public readonly speed: number;
 
   constructor(
     typeShip: ShipTypes,
-    shield: shieldType,
+    shield: ShieldType,
     fuel: number,
     maxCapacity: number,
     speed: number

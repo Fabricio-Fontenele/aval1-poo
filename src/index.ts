@@ -1,6 +1,5 @@
 // FORMA DE USO ESPERADO!!!!!!!!!!!
 
-import { Mission } from "./mission/mission";
-import { randNumber } from "./utils/randons";
+import { Mission } from "./mission/mission"
 
-const mission1 = new Mission();
+const mission1 = new Mission()

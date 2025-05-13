@@ -23,4 +23,6 @@ export class Planet {
   isCompatible(ship: SpaceShips): boolean {
     return AtmosphereCompatibility[this.atmosphere].includes(ship.shield);
   }
+
+  static createPlanet() {}
 }

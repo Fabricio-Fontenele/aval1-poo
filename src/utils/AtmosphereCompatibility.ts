@@ -1,11 +1,10 @@
-import { shieldType, TypeAtmosphere } from "src/types/types";
+import { ShieldType, TypeAtmosphere } from "src/types/types";
 
-export const AtmosphereCompatibility: Record<string, shieldType[]> = {
-  [TypeAtmosphere[0]]: [shieldType.BioFilterShield],
-  [TypeAtmosphere[1]]: [shieldType.ThermalShield],
-  [TypeAtmosphere[2]]: [shieldType.PhaseShield],
-  [TypeAtmosphere[3]]: [shieldType. MagneticDisruptor],
-  [TypeAtmosphere[4]]: [shieldType.RadiationShield, shieldType.CryoInsulationShield],
-  [TypeAtmosphere[5]]: [shieldType.ThermalShield, shieldType.CorrosionShield],
-  [TypeAtmosphere[6]]: [shieldType.CorrosionShield]
+export const AtmosphereCompatibility: Record<TypeAtmosphere, ShieldType[]> = {
+  [TypeAtmosphere.Corrosive]: [ShieldType.corrosionResistant],
+  [TypeAtmosphere.Toxic]: [ShieldType.biohazardSealed],
+  [TypeAtmosphere.Explosive]: [ShieldType.chemicalResistant],
+  [TypeAtmosphere.Radioactive]: [ShieldType.radiationShielded],
+  [TypeAtmosphere.Thin]: [ShieldType.radiationShielded],
+  [TypeAtmosphere.Dense]: [ShieldType.reinforcedHull]
 };
