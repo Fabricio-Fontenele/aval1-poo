@@ -1,18 +1,12 @@
-
-export function randomSelection<T>(array: T[], value: number): T[] {
-  const selection: T[] = [];
-
-  if (value > array.length) throw new Error(`Invalid count: ${value}`);
-
-  do {
-    const choice = array[Math.floor(Math.random() * array.length)];
-    if (selection.indexOf(choice) == -1) {
-      selection.push(choice);
-    }
-  } while (selection.length < value);
-
-  return selection;
+export function random(n: number): number {
+  return Math.floor(Math.random() * n);
 }
 
+export function randomChoice<T>(array: T[]): T {
+  if (array.length == 0) throw new Error("Empty array");
+  return array[random(array.length)];
+}
 
-// REFAZER FUNCTION RANDNUMBER
+export function randNumber(minValue: number, maxValue: number): number {
+  return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+}

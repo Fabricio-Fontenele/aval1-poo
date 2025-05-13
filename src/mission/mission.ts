@@ -1,4 +1,3 @@
-
 import { Planet } from "src/models/planet";
 import { SpaceShips } from "src/models/spaceship";
 import {
@@ -18,9 +17,8 @@ import {
 import { shieldType } from "src/types/types";
 
 export class Mission {
-
-  private ship: SpaceShips | null = null
-  private planet: Planet | null = null
+  private ship: SpaceShips | null = null;
+  private planet: Planet | null = null;
 
   constructor(
     private planets: (new () => Planet)[] = [
@@ -40,8 +38,7 @@ export class Mission {
     ]
   ) {}
 
-
-// MÉTODOS RESPONSÁVEIS POR FAZER AS ESCOLHAS ALEATÓROIAS DOS PLANETAS E DAS NAVES
+  // MÉTODOS RESPONSÁVEIS POR FAZER AS ESCOLHAS ALEATÓROIAS DOS PLANETAS E DAS NAVES
 
   public assignedShip(): SpaceShips {
     const index = Math.floor(Math.random() * this.shipDisponibolity.length);
@@ -70,13 +67,11 @@ export class Mission {
     return new chosenPlanet();
   }
 
-/////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////////////////////
 
+  // MÉTODO RESPONSÁVEL POR INICIAR A MISSÃO
+  start(): void {}
 
-// MÉTODO RESPONSÁVEL POR INICIAR A MISSÃO
-  start(): void { }
-
-// MÉTODO RESPONSÁVEL POR IMPRIMIR TODAS AS INFORMAÇÕES DA MISSÃO
-  showReport(): void { }
-
+  // MÉTODO RESPONSÁVEL POR IMPRIMIR TODAS AS INFORMAÇÕES DA MISSÃO
+  showReport(): void {}
 }

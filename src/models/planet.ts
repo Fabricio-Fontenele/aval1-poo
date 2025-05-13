@@ -4,7 +4,7 @@ import { AtmosphereCompatibility } from "src/utils/AtmosphereCompatibility";
 
 export class Planet {
   public readonly name: planetName;
-  public readonly atmosphere: TypeAtmosphere
+  public readonly atmosphere: TypeAtmosphere;
   public readonly distanceToEarth: number;
   public readonly acceptedCargo: CargoType[];
 

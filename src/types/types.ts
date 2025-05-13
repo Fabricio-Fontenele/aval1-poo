@@ -1,19 +1,19 @@
 export enum planetName {
-  'Nebularic',
-  'Luminid',
-  'Florite',
-  'Aquahell',
-  'Roxil',
+  Nebularic,
+  Luminid,
+  Florite,
+  Aquahell,
+  Roxil,
 }
 
 export enum TypeAtmosphere {
-  'Sporophic',
-  'Mercurial',
-  'Etheralia',
-  'Obscuria',
-  'Chernofrost',
-  'Vulcarine',
-  'Sulfarine',
+  Sporophic,
+  Mercurial,
+  Etheralia,
+  Obscuria,
+  Chernofrost,
+  Vulcarine,
+  Sulfarine,
 }
 
 export enum CargoType {
@@ -41,4 +41,3 @@ export enum ShipTypes {
   TitanCarrier,
   GoliathHauler,
 }
-
