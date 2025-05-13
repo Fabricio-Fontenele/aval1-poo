@@ -1,12 +1,12 @@
-export const planetName: string[] = [
+export enum planetName {
   'Nebularic',
   'Luminid',
   'Florite',
   'Aquahell',
   'Roxil',
-]
+}
 
-export const TypeAtmosphere: string[] = [
+export enum TypeAtmosphere {
   'Sporophic',
   'Mercurial',
   'Etheralia',
@@ -14,7 +14,7 @@ export const TypeAtmosphere: string[] = [
   'Chernofrost',
   'Vulcarine',
   'Sulfarine',
-]
+}
 
 export enum CargoType {
   ShieldedCapsule,

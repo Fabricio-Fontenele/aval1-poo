@@ -1,6 +1,3 @@
-import { Planet } from "src/models/planet";
-import { SpaceShips } from "src/models/spaceship";
-import { shieldType } from "src/types/types";
 
 export function randomSelection<T>(array: T[], value: number): T[] {
   const selection: T[] = [];
@@ -16,3 +13,6 @@ export function randomSelection<T>(array: T[], value: number): T[] {
 
   return selection;
 }
+
+
+// REFAZER FUNCTION RANDNUMBER
