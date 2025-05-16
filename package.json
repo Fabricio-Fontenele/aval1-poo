@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "clear && ts-node -r tsconfig-paths/register src/index.ts",
+    "dev": "cls && ts-node -r tsconfig-paths/register src/index.ts",
     "build": "rimraf build && tsc"
   },
   "engines": {

@@ -7,3 +7,6 @@ mission1.showReport()
 
 const mission2 = new Mission('Super')
 mission2.showReport()
+
+const mission3 = new Mission('Subnáutica')
+mission3.showReport()
