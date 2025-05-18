@@ -82,11 +82,11 @@ aval1-poo/
 
 4. **Execute o projeto:**
    ```bash
-   node dist/index.js
+   npm run dev
    ```
-   ou, se usar `ts-node`:
+   ou, se usar `yarn`:
    ```bash
-   npx ts-node src/index.ts
+   yarn dev
    ```
 
 O terminal irá exibir o relatório de várias missões simuladas, mostrando planetas, naves, cargas e se a missão foi bem-sucedida ou não.
