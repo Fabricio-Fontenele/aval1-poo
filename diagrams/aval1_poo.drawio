@@ -91,7 +91,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="vmXCugo-8E_neVCZ6Zrw-72" value="1,N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="vmXCugo-8E_neVCZ6Zrw-65">
+        <mxCell id="vmXCugo-8E_neVCZ6Zrw-72" value="1,1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="vmXCugo-8E_neVCZ6Zrw-65">
           <mxGeometry x="0.9402" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -337,7 +337,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="vmXCugo-8E_neVCZ6Zrw-71" value="1,N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="vmXCugo-8E_neVCZ6Zrw-66">
+        <mxCell id="vmXCugo-8E_neVCZ6Zrw-71" value="1,1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="vmXCugo-8E_neVCZ6Zrw-66">
           <mxGeometry x="0.88" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -358,7 +358,7 @@
             <mxPoint x="891" y="73" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="vmXCugo-8E_neVCZ6Zrw-69" value="1,N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="vmXCugo-8E_neVCZ6Zrw-67">
+        <mxCell id="vmXCugo-8E_neVCZ6Zrw-69" value="1,1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="vmXCugo-8E_neVCZ6Zrw-67">
           <mxGeometry x="0.9418" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
