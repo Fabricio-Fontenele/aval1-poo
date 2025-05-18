@@ -118,6 +118,7 @@ O terminal irá exibir o relatório de várias missões simuladas, mostrando pla
 
 ---
 
+
 ## Licença
 
 Projeto acadêmico sem fins lucrativos.
