@@ -1,9 +1,11 @@
-// FORMA DE USO ESPERADO!!!!!!!!!!!
 
 // *AUTORES: string[] = [
-// 'Ruan Pedro de Araujo Anjos,
-// 'Denis do Nascimento Rodrigues,
-// 'Fabrício Fontenele Vieira.]* //
+    // 'Ruan Pedro de Araujo Anjos,
+    // 'Denis do Nascimento Rodrigues,
+    // 'Fabrício Fontenele Vieira.]* //
+    
+    
+// FORMA DE USO ESPERADO!!!!!!!!!!!
 
 import * as mission from "./mission/mission"
 
