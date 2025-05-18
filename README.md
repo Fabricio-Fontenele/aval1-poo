@@ -117,8 +117,3 @@ O terminal irá exibir o relatório de várias missões simuladas, mostrando pla
 - Fabrício Fontenele Vieira
 
 ---
-
-
-## Licença
-
-Projeto acadêmico sem fins lucrativos.
