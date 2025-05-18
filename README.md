@@ -105,7 +105,7 @@ O terminal irá exibir o relatório de várias missões simuladas, mostrando pla
 
 - **Executar novamente:**
    ```bash
-   node dist/index.js
+   npm run dev
    ```
 
 ---
