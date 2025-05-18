@@ -50,7 +50,6 @@ aval1-poo/
 
 - [Node.js](https://nodejs.org/) (versão 16 ou superior recomendada)
 - [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
-- [TypeScript](https://www.typescriptlang.org/) instalado globalmente (opcional, mas recomendado)
 
 ---
 
