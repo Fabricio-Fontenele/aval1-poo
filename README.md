@@ -33,7 +33,7 @@ aval1-poo/
 ├── src/
 │   ├── cargos/               # Tipos de carga
 │   ├── mission/              # Lógica principal da missão
-│   ├── models/               # Classes abstratas e interfaces
+│   ├── models/               # Classes abstratas
 │   ├── planets/              # Tipos de planetas
 │   ├── ships/                # Tipos de naves espaciais
 │   ├── types/                # Tipos e enums auxiliares
