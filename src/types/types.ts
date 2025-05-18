@@ -17,7 +17,7 @@ export const TypeAtmosphere = [
 
 export enum CargoType {
   ShieldedCapsule = "Capsula de armadura",
-  BioSample = "Amostra biológica",
+  BioSample = "Amostra biológica", 
   OxygenTank = "Tanque de Oxigênio",
   SupplyBox = "Caixa de suprimentos",
   CommunicationModule = "Módulo de comunicação",
@@ -34,8 +34,7 @@ export enum ShieldType {
 export enum ShipTypes {
   'PixieRunner',
   'stellarCreate',
-  'StellarCrate',
-  'TitanCarrier',
+  'NovaDrift',
   'GoliathHauler',
-  'NovaDrift'
+  'TitanCarrier'
 }

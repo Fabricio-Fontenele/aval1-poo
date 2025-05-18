@@ -2,8 +2,7 @@
 // *AUTORES: string[] = [
     // 'Ruan Pedro de Araujo Anjos,
     // 'Denis do Nascimento Rodrigues,
-    // 'Fabrício Fontenele Vieira.]* //
-    
+    // 'Fabrício Fontenele Vieira.]* //    
     
 // FORMA DE USO ESPERADO!!!!!!!!!!!
 
